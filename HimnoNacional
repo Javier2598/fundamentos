@@ -1,0 +1,14 @@
+// HimnoNacional.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main () {
+	cout<<"Bolivianos el hado propicio"<<endl;
+	return 0;
+getch();
+}
+	
