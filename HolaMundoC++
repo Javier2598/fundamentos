@@ -1,0 +1,13 @@
+// HolaMundo.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	cout<<"Hola mundo"<<endl;
+	getch();
+}
