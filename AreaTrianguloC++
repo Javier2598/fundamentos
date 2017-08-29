@@ -1,0 +1,20 @@
+// AreaTriangulo.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+	float base, altura, area;
+	cout<<"La base es: ";
+	cin>>base;
+	cout<<"La altura es: ";
+	cin>>altura;
+	area=(base*altura)/2;
+	cout<<"El area es: ";
+	cout<<area<<endl;
+	getch();
+}
