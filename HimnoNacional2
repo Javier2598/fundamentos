@@ -1,0 +1,17 @@
+// HimnoNacional2.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	cout<<"Bolivianos el hado propicio"<<endl;
+	cout<<"Corono nuestros votos y anhelo"<<endl;
+	cout<<"Es ya libre es ya libre este suelo"<<endl;
+	cout<<"Ya ceso su servir condicion"<<endl;
+	getch();
+	return 0;
+}
