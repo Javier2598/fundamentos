@@ -1,0 +1,23 @@
+// Promedio.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	float num1, num2, num3, promedio;
+	cout<<"Ingrese el numero 1: ";
+	cin>>num1;
+	cout<<"Ingrese el numero 2: ";
+	cin>>num2;
+	cout<<"Ingrese el numero 3: ";
+	cin>>num3;
+	promedio=(num1+num2+num3)/3;
+	cout<<"El promedio es: ";
+	cout<<promedio<<endl;
+	getch();
+	return 0;
+}
