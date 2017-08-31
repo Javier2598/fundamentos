@@ -1,0 +1,10 @@
+Algoritmo ValorAbsoluto
+	leer entero a, x;
+	Leer x;
+	Si (x>=0) Entonces
+		a=x
+	Sino
+		a=-x
+	Fin Si
+	Escribir a
+FinAlgoritmo
