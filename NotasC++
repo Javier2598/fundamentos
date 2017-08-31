@@ -1,0 +1,30 @@
+// Notas.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	float P1, P2, P3, NP, EF, N1, N2, N3, NF;
+	cout<<"Ingrese el parcial 1: ";
+	cin>>P1;
+	cout<<"Ingrese el parcial 2: ";
+	cin>>P2;
+	cout<<"Ingrese el parcial 3: ";
+	cin>>P3;
+	N1=((P1+P2+P3)/3)*0.4;
+	cout<<"Ingrese la nota práctica: ";
+	cin>>NP;
+	N2=NP*0.2;
+	cout<<"Ingrese el examen final: ";
+	cin>>EF;
+	N3=EF*0.4;
+	NF=N1+N2+N3;
+	cout<<"La nota final es: ";
+	cout<<NF<<endl;
+	getch();
+    return 0;
+}
