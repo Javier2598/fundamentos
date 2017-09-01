@@ -1,0 +1,19 @@
+// Votar.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main ()
+{
+	int edad;
+	cout<<"Ingrese la edad: ";
+	cin>>edad;
+	if (edad>=18)
+		cout<<"Puede votar";
+	else 
+		cout<<"No puede votar";
+	getch();
+}
