@@ -1,0 +1,21 @@
+// ValorAbsoluto.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+	float a, x;
+	cout<<"Ingrese el numero: ";
+	cin>>a;
+	if (a>0)
+		x=a;
+	else 
+		x=-a;
+	cout<<"El valor aboluto de: "<<a<<" es "<<x;
+	getch();//Detiene la pantalla
+	 
+}
