@@ -1,0 +1,29 @@
+// DosNumeros.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	float a, b, producto, resta;
+	cout<<"Ingrese el primer numero: ";
+	cin>>a;
+	cout<<"Ingrese el segundo numero: ";
+	cin>>b;
+	if (a==b) 
+		producto=a*b;
+	
+	cout<<"El producto es: ";
+	cout<<producto<<endl;
+	if (a>b) 
+		resta=a-b;
+	else
+	    resta=b-a;
+	
+	cout<<"La resta es: ";
+	cout<<resta<<endl;
+	getch();
+}
