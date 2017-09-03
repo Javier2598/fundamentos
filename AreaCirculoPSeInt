@@ -1,0 +1,8 @@
+Algoritmo AreaCirculo
+	Escribir PI;
+	Escribir "Digite el radio: ";
+	Leer radio;
+	area<-PI*radio*radio;
+	Escribir "El area es: ";
+	Escribir area;
+FinAlgoritmo
