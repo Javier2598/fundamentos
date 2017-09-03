@@ -1,0 +1,21 @@
+// SalarioNeto2.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main ()
+{
+	float SN, SB, SM=1656;
+	cout<<"El salario bruto es: ";
+	cin>>SB;
+	if (SB>SM)
+		SN=SB*(1-0.13-0.127);
+	else
+	    SN=SB*(1-0.127);
+	cout<<"El salario neto es: "<<SN<<endl;
+	getch();
+	return 0;
+}
