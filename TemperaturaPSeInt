@@ -1,0 +1,10 @@
+Algoritmo Temperatura
+	Escribir "La temperatura es: ";
+	Leer F;
+	C=(F-32)/1.8;
+	Si (C>=38) Entonces
+		Escribir "Tiene fiebre"
+	Sino
+		Escribir "No tiene fiebre"
+	Fin Si
+FinAlgoritmo
