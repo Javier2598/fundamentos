@@ -1,0 +1,20 @@
+// Temperatura.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	float F, C;
+	cout<<"Temperatura en Fahrenheit: ";
+	cin>>F;
+	C=(F-32)/1.8;
+	if (C>=38)
+		cout<<"Tiene fiebre";
+	else 
+		cout<<"No tiene fiebre";
+	getch();
+}
