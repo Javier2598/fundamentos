@@ -1,0 +1,12 @@
+Algoritmo SalarioNeto
+	Escribir real SN, SB, SM=1656;
+	Escribir "El salario bruto es: ";
+	Leer SB;
+	Si (SB>SM) Entonces
+		SN=SB*(1-0.13-0.127);	
+	Sino
+		SN=SB*(1-0.127);
+	Fin Si
+    Escribir "El salario neto es: ";
+	Escribir SN;
+FinAlgoritmo
