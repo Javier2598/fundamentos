@@ -1,0 +1,22 @@
+Algoritmo DosNumeros
+	Escribir "Ingrese el primer numero: ";
+	Leer A;
+	Escribir "Ingrese el segundo numero: ";
+	Leer B;
+	Si (A==B) Entonces
+		producto<-A*B;
+		Escribir "El producto es: ";
+		Escribir producto;
+		Fin Si
+	Si (A>B) Entonces
+		resta<-A-B;
+		Escribir "La resta es: ";
+		Escribir resta;
+	    Fin Si
+	Si (B>A) Entonces
+		resta<-B-A;
+		Escribir "La resta es: ";
+		Escribir resta;
+		Fin Si
+
+FinAlgoritmo
