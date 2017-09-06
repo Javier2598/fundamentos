@@ -1,0 +1,12 @@
+Algoritmo Camisas
+	Escribir "El numero de camisas es: ";
+	Leer n;
+	Si (n>=4) Entonces
+		T=50*n*(1-0.35);
+	Sino
+		T=50*n*(1-0.15);
+	Fin Si
+	Escribir "El total a pagar es: ";
+	Escribir T;
+	
+FinAlgoritmo
