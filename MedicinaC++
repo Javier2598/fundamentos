@@ -1,0 +1,31 @@
+// Medicina.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	float Mater, Trauma, Pedi, M;
+	cout<<"El ingreso total es: ";
+	cin>>M;
+	if (M>2000000) {
+		Mater=M*(1-0.25);
+	    Trauma=M*(1-0.35);
+		Pedi=M*(1-0.25);
+	}else{ 
+		Mater=M*(1-0.30);
+	    Trauma=M*(1-0.40);
+		Pedi=M*(1-0.30);
+	}
+	cout<<"El costo para maternidad es: ";
+	cout<<Mater<<endl;
+	cout<<"El costo para traumatologia es: ";
+	cout<<Trauma<<endl;
+	cout<<"El costo para pediatria es: ";
+	cout<<Pedi<<endl;
+	getch();
+	return 0;
+}
