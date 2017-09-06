@@ -1,0 +1,23 @@
+// Camisas.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	float n, M, T;
+	cout<<"El numero de camisas es: ";
+	cin>>n;
+	cout<<"El monto de cada camisa es: ";
+	cin>>M;
+	if (n>=4)
+		T=n*M*(1-0.35);
+	else
+		T=n*M*(1-0.15);
+	cout<<"El total a pagar es: ";
+	cout<<T;
+	getch();
+}
