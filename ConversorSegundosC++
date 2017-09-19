@@ -1,0 +1,20 @@
+// ConversorSegundos.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	int N, H, M, S;
+	cout<<"Ingrese el numero: ";
+	cin>>N;
+	H= (N/3600);
+	M= (N-H*3600)/60;
+	S= N-(H*3600+M*60);
+	cout<<" "<<H<<" Horas, "<<" "<<M<<" Minutos, "<<" "<<S<<" Segundos";
+	getch();
+	return 0;
+}
