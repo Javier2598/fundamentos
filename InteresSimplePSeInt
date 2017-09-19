@@ -1,0 +1,11 @@
+Algoritmo InteresSimple
+	Escribir "El capital es: ";
+	Leer C;
+	Escribir "El periodo de anos es: ";
+	Leer N;
+	Escribir "La tasa de interes es: ";
+	Leer T;
+	I<-(C*N*(T/100));
+	Escribir "El interes simple es: ";
+	Escribir I;
+FinAlgoritmo
