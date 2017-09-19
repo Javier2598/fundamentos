@@ -1,0 +1,27 @@
+// InteresCompuesto.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+	float I, C, N, T, M;
+	cout<<"Ingresar el capital: ";
+	cin>>C;
+	cout<<"Ingresar el periodo de anos: ";
+	cin>>N;
+	cout<<"Ingresar la tasa de interes: ";
+	cin>>T;
+	M=(pow(1+T/100,N))*C;
+	I=M-C;
+	cout<<"El monto es: ";
+	cout<<M<<endl;
+    cout<<"El interes compuesto es: ";
+	cout<<I<<endl;
+	getch();
+	return 0;
+}
