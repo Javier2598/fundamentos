@@ -1,0 +1,31 @@
+// Ecuaciones lineales.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	float A, B, C, D, E, F, x, y;
+	cout<<"Ingrese el coeficiente A: ";
+	cin>>A;
+	cout<<"Ingrese el coeficiente B: ";
+	cin>>B;
+	cout<<"Ingrese el coeficiente C: ";
+	cin>>C;
+	cout<<"Ingrese el coeficiente D: ";
+	cin>>D;
+	cout<<"Ingrese el coeficiente E: ";
+	cin>>E;
+	cout<<"Ingrese el coeficiente F: ";
+	cin>>F;
+	y=(A*F-C*D)/(A*E-B*D);
+	x=(C-(B*y))/A;
+	cout<<" "<<A<<"x +"<<" "<<B<<"y ="<<" "<<C<<endl;
+	cout<<" "<<D<<"x +"<<" "<<E<<"y ="<<" "<<F<<endl;
+	cout<<"La solucion x es: "<<x<<endl;
+	cout<<"La solucion y es: "<<y<<endl;
+	getch();
+}
