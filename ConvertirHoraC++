@@ -1,0 +1,28 @@
+// ConvertirHora.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int H, h, M, S;
+	cout<<"Ingrese la hora: ";
+	cin>>h;
+	cout<<"Ingrese los minutos: ";
+	cin>>M;
+	cout<<"Ingrese los segundos: ";
+	cin>>S;
+	if (h>12 && h<=24){
+		H=h-12;
+	    cout<<" " <<H<<" "<<M<<" "<<S<<" PM";
+	}
+	if (h<12){
+		H=h;
+	cout<<" " <<H<<" "<<M<<" "<<S<<" AM";
+	}
+	getch();
+}
+
