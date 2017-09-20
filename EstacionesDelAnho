@@ -1,0 +1,55 @@
+// EstacionesDelAnho.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int main()
+{
+    int d,m,a;
+    cout<<"Dia ";
+    cin>>d;
+    cout<<"Mes ";
+    cin>>m;
+    cout<<"Anho ";
+    cin>>a;
+    if(m>3 && m<6){
+        cout<<"Otonho";
+    }
+    if(m>6 && m<9){
+        cout<<"Invierno";
+    }
+    if(m>9 && m<12){
+        cout<<"Primavera";
+    }
+    if(m<3){
+        cout<<"Verano";
+    }
+    if(m==3){
+        if(d<21)
+			cout<<"Verano";
+	}else{ 
+		cout<<"Otonho";
+    }
+    if(m==6){
+        if(d<21) 
+			cout<<"Otonho";
+	}else{ 
+		cout<<"Invierno";
+    }
+    if(m==9){
+        if(d<21)
+			cout<<"Invierno";
+	}else{ 
+		cout<<"Primavera";
+    }
+    if(m==12){
+        if(d<21) 
+			cout<<"Primavera";
+	}else{ 
+		cout<<"Verano";
+    }
+    return 0;
+	getch();
+}
