@@ -1,0 +1,33 @@
+// RestaTiempo.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int main()
+{
+    int h,m,s,i=0;
+    cout<<"Hora Inicial:"<<endl<<"Horas ";
+    cin>>h;
+    cout<<"Minutos ";
+    cin>>m;
+    cout<<"Segundos ";
+    cin>>s;
+    i=h*3600+m*60+s;
+    cout<<"Hora Final:"<<endl<<"Horas ";
+    cin>>h;
+    cout<<"Minutos ";
+    cin>>m;
+    cout<<"Segundos ";
+    cin>>s;
+    h=h*3600+60*m+s;
+    i=h-i;
+    h=i/3600;
+    i=i-h*3600;
+    m=i/60;
+    i=i-60*m;
+    cout<<"Diferencia: "<<h<<" Horas  "<<m<<" Minutos  "<<i<<" Segundos";
+	getch();
+    return 0;
+}
