@@ -1,0 +1,28 @@
+// CartaCosto.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	float P;
+	cout<<"Ingresar el peso de la carta: ";
+	cin>>P;
+	if (P>0 && P<50)
+		cout<<"El costo es Bs. 1.50";
+	if (P>50 && P<=100)
+		cout<<"El costo es Bs. 4.00";
+	if (P>100 && P<=200)
+		cout<<"El costo es Bs. 6.00";
+	if (P>200 && P<=350)
+		cout<<"El costo es Bs. 10.50";
+	if (P>350 && P<=500)
+		cout<<"El costo es Bs. 15.00";
+	if (P>500)
+		cout<<"NO PUEDE ENVIAR COMO CARTA";
+	getch();
+
+}
