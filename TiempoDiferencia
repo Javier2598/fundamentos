@@ -1,0 +1,62 @@
+// TiempoDiferencia.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int Hora1, Min1, Seg1, Hora2, Min2, Seg2, Hora, Min, Seg;
+	cout<<"Ingresar la hora 1: ";
+	cin>>Hora1;
+	cout<<"Ingresar el minuto 1: ";
+	cin>>Min1;
+	cout<<"Ingresar el segundo 1: ";
+	cin>>Seg1;
+	cout<<"Ingresar la hora 2: ";
+	cin>>Hora2;
+	cout<<"Ingresar el minuto 2: ";
+	cin>>Min2;
+	cout<<"Ingresar el segundo 2: ";
+	cin>>Seg2;
+	if (Hora1>Hora2) 
+		if (Hora1<=23 && Hora2<=23) 
+			Hora=Hora1-Hora2;
+		else
+			cout<<"No se puede determinar";
+	else
+		if (Hora1<=23 && Hora2<=23) 
+			Hora=Hora2-Hora1;
+		else
+			cout<<"No se puede determinar";
+		
+	
+	if (Min1>Min2) 
+		if (Min1<=59 && Min2<=59) 
+			Min=Min1-Min2;
+		else
+			cout<<"No se puede determinar";
+	else
+		if (Min1<=59 && Min2<=59) 
+			Min=Min2-Min1;
+		else
+			cout<<"No se puede determinar";
+		
+
+
+	if (Seg1>Seg2) 
+		if (Seg1<=59 && Seg2<=59) 
+			Seg=Seg1-Seg2;
+		else
+			cout<<"No se puede determinar";
+	else
+		if (Seg1<=59 && Seg2<=59) 
+			Seg=Seg2-Seg1;
+		else
+			cout<<"No se puede determinar";
+	cout<<" "<<Hora<<":"<<" "<<Min<<":"<<" "<<Seg;
+		
+	getch();
+}
