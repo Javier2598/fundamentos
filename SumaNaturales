@@ -1,0 +1,19 @@
+// SumaNaturales.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int N, S=0, i;
+	cout<<"Ingrese la cantidad de numeros naturales: ";
+	cin>>N;
+	for (i=1; i<=N; i++) 
+		S=S+i;
+	cout<<"La suma es: ";
+	cout<<S;
+	getch();
+}
