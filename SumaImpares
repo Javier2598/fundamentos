@@ -1,0 +1,19 @@
+// SumaImpares.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+ int main()
+ {
+	 int N, S=0, i;
+	 cout<<"Ingrese el numero: ";
+	 cin>>N;
+	 for (i=1; i<=N; i=i+2)
+		 S=S+i;
+	 cout<<"La suma es: ";
+	 cout<<S;
+	getch();
+ }
