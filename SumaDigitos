@@ -1,0 +1,25 @@
+// SumaDigitos.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int N, S=0, r;
+	cout<<"Ingrese el numero: ";
+	cin>>N;
+	while (N>0) {
+		r=N%10;
+		S=S+r;
+		N=N/10;
+	}
+	cout<<"La suma es: ";
+	cout<<S;
+	getch();
+}
+
+
+	     
