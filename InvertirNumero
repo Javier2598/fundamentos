@@ -1,0 +1,22 @@
+// InvertirNumero.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	int N, I=0, r;
+	cout<<"Ingresar el numero: ";
+	cin>>N;
+	while (N>0) {
+		r=N%10;
+		I=I*10+r;
+		N=N/10;
+	}
+	cout<<"El numero invertido es: "<<I;
+	getch();
+	return 0;
+}
