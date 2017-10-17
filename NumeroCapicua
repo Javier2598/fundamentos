@@ -1,0 +1,29 @@
+// NumeroCapicua.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	int N, r, I=0, NI;
+	cout<<"Ingrese el numero: ";
+	cin>>N;
+	while (N>0) {
+		r=N%10;
+		I=I*10+r;
+		N=N/10;
+	}
+	
+	cout<<"El numero invertido es: "<<I<<endl;
+	cout<<"Ingresar nuevamente el numero: ";
+	cin>>N;
+	if (I==N) 
+		cout<<"Es un numero capicua";
+	else 
+		cout<<"El numero no es capicua";
+    getch();
+	return 0;
+}
