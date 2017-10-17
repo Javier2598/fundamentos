@@ -1,0 +1,23 @@
+// ContarDigitosPares.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int N, r, dp=0;
+	cout<<"Ingrese el numero: ";
+	cin>>N;
+	while (N>0) {
+		r=N%10;
+		if (r%2==0)
+			dp=dp+1;
+		N=N/10;
+	}
+	cout<<"El numero de digitos pares es: ";
+	cout<<dp;
+	getch();
+}
