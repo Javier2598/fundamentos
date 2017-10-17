@@ -1,0 +1,24 @@
+// Base8.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int N, r;
+	cout<<"Ingresar el numero: ";
+	cin>>N;
+	while (N>0) {
+		r=N%10;
+		if (r>7) {
+			cout<<"No corresponde a su base el digito: ";
+			cout<<r<<endl;
+		}
+		N=N/10;
+		
+	}
+	getch();
+}
