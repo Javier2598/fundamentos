@@ -1,0 +1,18 @@
+// Serie1.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int main()
+{
+	int N, I;
+	cout<<"Ingrese el numero: ";
+	cin>>N;
+	for (I=1; I<=N; I=I+4)
+		cout<<" "<<I;
+	getch();
+	return 0;
+}
