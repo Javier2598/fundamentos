@@ -1,0 +1,41 @@
+// FormatoHora.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int Hora1, Hora2, Min1, Min2, Seg1, Seg2, Hora, Min, Seg, T1, T2, T;
+	cout<<"Ingrese la hora 1: ";
+	cin>>Hora1;
+	cout<<"Ingrese el minuto 1: ";
+	cin>>Min1;
+	cout<<"Ingrese el segundo 1: ";
+	cin>>Seg1;
+	cout<<"Ingrese la hora 2: ";
+	cin>>Hora2;
+	cout<<"Ingrese el minuto 2: ";
+	cin>>Min2;
+	cout<<"Ingrese el segundo 2: ";
+	cin>>Seg2;
+	if (Hora1<=23 && Hora2<=23 && Min1<=59 && Min2<=59 && Seg1<=59 && Seg2<=59) {
+        T1=Hora1*3600+Min1*60+Seg1;
+	    T2=Hora2*3600+Min2*60+Seg2;
+	     if (T1>T2)
+		     T=T1-T2;
+	     else 
+		     T=T2-T1;
+	   Hora=T/3600;
+	   Min=(T-(Hora*3600))/60;
+	   Seg=(T-(Hora*3600)-(Min*60));
+           cout<<"El primer horario es:  "<<Hora1<<" :"<<Min1<<": "<<Seg1<<endl;
+	       cout<<"El segundo horario es:  "<<Hora2<<" :"<<Min2<<": "<<Seg2<<endl;
+	       cout<<"El tiempo transcurrido es:  "<<Hora<<" :"<<Min<<": "<<Seg<<endl;
+	}else{
+		cout<<"Horario erroneo. Ingresar tiempo adecuado";
+	}
+	getch();
+}
