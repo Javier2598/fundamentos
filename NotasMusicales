@@ -1,0 +1,67 @@
+// NotasMusicales.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	char letra;
+	do {
+	  cout<<"Ingrese la letra: ";
+	  cin>>letra;
+	
+      switch (letra) {
+	    case 'A':
+	       cout<<"La"<<endl;
+		   break;
+	    case 'a':
+		   cout<<"La"<<endl;
+		   break;
+	    case 'B':
+		    cout<<"Si"<<endl;
+		    break;
+		case 'b':
+			cout<<"Si"<<endl;
+			break;
+		case 'C':
+			cout<<"Do"<<endl;
+			break;
+		case 'c':
+			cout<<"Do"<<endl;
+			break;
+		case 'D':
+			cout<<"Re"<<endl;
+			break;
+		case 'd':
+			cout<<"Re"<<endl;
+			break;
+		case 'E':
+			cout<<"Mi"<<endl;
+			break;
+		case 'e':
+			cout<<"Mi"<<endl;
+			break;
+		case 'F':
+			cout<<"Fa"<<endl;
+			break;
+		case 'f':
+			cout<<"Fa"<<endl;
+			break;
+		case 'G':
+			cout<<"Sol"<<endl;
+			break;
+		case 'g':
+			cout<<"Sol"<<endl;
+			break;
+		case 0:
+		default:
+			cout<<"Error. Ingrese una letra valida"<<endl;
+	}
+	}
+	while (letra!='0');
+	getch();
+	
+}
