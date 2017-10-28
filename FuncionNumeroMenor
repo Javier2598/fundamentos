@@ -1,0 +1,28 @@
+// FuncionMenorNumero.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int menor_numero(int a, int b);
+void main()
+{
+	int menor, a, b;
+	cout<<"Ingrese el primer numero: ";
+	cin>>a;
+	cout<<"Ingrese el segundo numero: ";
+	cin>>b;
+	menor=menor_numero(a, b);
+	cout<<"El menor numero es: "<<menor;
+	getch();
+}
+    int menor_numero(int a, int b)
+	{
+		int menor;
+		if (a<b)
+			menor=a;
+		else
+			menor=b;
+		return menor;
+	}
