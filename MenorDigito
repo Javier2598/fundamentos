@@ -1,0 +1,25 @@
+// MenorDigito.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+ 
+void main()
+{
+	int N, r, menor=9;
+	cout<<"Ingrese el numero entero: ";
+	cin>>N;
+	while (N>0) {
+		r=N%10;
+		if (r<menor)
+			menor=r;
+		N=N/10;
+	}
+	cout<<"El menor numero es: "<<menor;
+	getch();
+
+
+
+}
