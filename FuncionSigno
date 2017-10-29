@@ -1,0 +1,29 @@
+// Signo.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int signo(float x);
+void main()
+{
+	int sig;
+	float x;
+	cout<<"Ingrese el numero: ";
+	cin>>x;
+	sig=signo(x);
+	cout<<"El signo es: "<<sig;
+	getch();
+}
+    int signo(float x) {
+		int sig;
+	    if (x>0)
+			sig=1;
+		if (x<0)
+			sig=-1;
+		if (x==0)
+			sig=0;
+		return sig;
+	}
+		
