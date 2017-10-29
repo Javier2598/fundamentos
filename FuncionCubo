@@ -1,0 +1,24 @@
+// FuncionCubo.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+float cubo_numero(float x);
+void main()
+{
+	float cubo, x;
+	cout<<"Ingresar el numero: ";
+	cin>>x;
+	cubo=cubo_numero(x);
+	cout<<"El cubo del numero es: "<<cubo;
+	getch();
+}
+    float cubo_numero(float x)
+	{
+		float cubo;
+		cubo=pow(x,3);
+		return cubo;
+	}
