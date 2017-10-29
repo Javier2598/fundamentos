@@ -1,0 +1,41 @@
+// CicloEnteros.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int n, x, c=0, s=0, menor=9, mayor=0;
+	float p;
+	do {
+		cout<<"Ingrese un numero natural: ";
+		cin>>n;
+		for (int i=1; i<=n; i++) {
+			cout<<"Ingrese un numero entero: ";
+			cin>>x;
+			c=c+i;
+			cout<<"El numero es: "<<x<<endl;
+			s=s+x;
+			if (x<=menor) {
+				menor=x;
+			}
+			if (x>=mayor) {
+				mayor=x;
+			}
+			
+		}
+	}
+		while (c<=n && c>0);
+		if(n<=0) {
+			cout<<"Error"<<endl;
+		}else{
+		    cout<<"El menor numero es: "<<menor<<endl;
+		    cout<<"El mayor numero es: "<<mayor<<endl;
+		    p=s/n;
+		    cout<<"El promedio de la suma de los numeros es: "<<p;
+		}
+		getch();
+}
