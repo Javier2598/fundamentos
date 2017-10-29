@@ -1,0 +1,68 @@
+// ValidarFecha.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+bool validar_fecha(int d, int m, int a);
+void main()
+{
+	int d, m, a;
+	bool flag;
+	cout<<"Ingrese el dia: ";
+	cin>>d;
+	cout<<"Ingrese el mes: ";
+	cin>>m;
+	cout<<"Ingrese el anho: ";
+	cin>>a;
+	flag=validar_fecha(d, m, a);
+	if (flag==true)
+		cout<<"La fecha es valida";
+	else
+		cout<<"La fecha es invalida";
+	getch();
+}
+    bool validar_fecha(int d, int m, int a) {
+		bool flag;
+		if (m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12) {
+			if (a<=2017) {
+			if (d>=1 && d<=31) {
+				flag=true;
+			}else{
+				flag=false;
+			}
+		}
+		}
+		return flag;
+	
+		if (m==4 || m==6 || m==9 || m==11) {
+			if (a<=2017) {
+			if (d>=1 && d<=30) {
+				flag=true;
+			}else{
+				flag=false;
+			}
+		}
+		}
+	    return flag;
+
+		if (a%40==0 || (a%4==0 && a%10!=0)) {
+			if (d>=1 && d<=29) {
+				flag=true;
+			}else{
+				flag=false;
+			}
+		}else{
+			if (d>=1 && d<=28) {
+				flag=true;
+			}else{
+				flag=false;
+			}
+		}
+		return flag;
+	}
+				
+			
+
+		
