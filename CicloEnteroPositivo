@@ -1,0 +1,37 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int n, x, c=0, s=0, menor=9, mayor=0; 
+	float promedio;
+	do {
+		cout<<"Ingrese un numero natural: ";
+		cin>>n;
+		for (int i=1; i<=n; i++) {
+			cout<<"Ingrese un numero entero: ";
+			cin>>x;
+			if (x>=0) {
+				c=c+i;
+				s=s+x;
+				if (x>mayor) {
+					mayor=x;
+				}
+				if (x<menor) {
+					menor=x;
+				}
+			}else{
+				cout<<"Ciclo terminado";
+			}
+		}
+	}while (x<=0);
+	cout<<"El mayor numero es: "<<mayor<<endl;
+	cout<<"El menor numero es: "<<menor<<endl;
+	promedio=s/n;
+	cout<<"El promedio es: "<<promedio<<endl;
+	getch();
+}
+
