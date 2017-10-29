@@ -1,0 +1,26 @@
+// FuncionExponente.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+float numero_potencia(float n, float x);
+void main()
+{
+	int pot, n, x;
+	cout<<"Ingresar la base: ";
+	cin>>n;
+	cout<<"Ingresar el exponente: ";
+	cin>>x;
+	pot=numero_potencia(n,x);
+	cout<<"El resultado  es: "<<pot;
+	getch();
+}
+    float numero_potencia(float n, float x)
+	{
+		int pot;
+		pot=pow(n,x);
+		return pot;
+	}
