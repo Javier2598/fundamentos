@@ -1,0 +1,29 @@
+// FuncionDigitoMenor.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+int menor_numero(int n);
+void main()
+{
+	int menor=9, n, r;
+	cout<<"Ingresar el numero: ";
+	cin>>n;
+	menor=menor_numero(n);
+	cout<<"El menor numero es: "<<menor;
+	getch();
+}
+    int menor_numero(int n)
+	{
+		int menor=9;
+		while (n>0) {
+			int r=n%10;
+			if (r<menor)
+				menor=r;
+			n=n/10;
+		}
+		return menor;
+	}
+
