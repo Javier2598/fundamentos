@@ -1,0 +1,25 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+float funcion_exponente(float n, float x);
+void main()
+{
+	int pot, n, x;
+	cout<<"Ingresar la base: ";
+	cin>>n;
+	cout<<"Ingresar el exponente: ";
+	cin>>x;
+	pot=funcion_exponente(n, x);
+	cout<<"El resultado es: "<<pot;
+	getch();
+}
+    float funcion_exponente(float n, float x)
+	{
+		int pot;
+		for (int i=0; i<=x; i++)
+			pot=pow(n,i);
+		return pot;
+	}
