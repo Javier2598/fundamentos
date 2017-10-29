@@ -1,0 +1,85 @@
+// SubprogramasMenu.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+short hola();
+int menor_numero(int a, int b, int c);
+float valor_absoluto(float x);
+
+void main()
+{
+	int a, b, c, x, opcion, menor, absoluto;
+	do{
+		cout<<"Menu"<<endl;
+	    cout<<"1. Imprimir HOLA"<<endl;
+	    cout<<"2. Sacar el menor de tres valores A, B y C enteros"<<endl;
+	    cout<<"3. Obtener el valor absoluto de un numero real"<<endl;
+	    cout<<"4. FIN"<<endl;
+	    cout<<"Ingrese la opcion del menu: ";
+		cin>>opcion;
+
+		switch (opcion) {
+		case 1:
+			hola();
+			break;
+		case 2:
+			cout<<"Ingrese el valor del primer numero: "<<endl;
+			cin>>a;
+			cout<<"Ingrese el valor del segundo numero: "<<endl;
+			cin>>b;
+			cout<<"Ingrese el valor del tercer numero: "<<endl;
+			cin>>c;
+			menor=menor_numero(a, b, c);
+			cout<<"El menor numero es: "<<menor<<endl;
+			break;
+		case 3:
+			cout<<"Ingrese el valor del numero: "<<endl;
+			cin>>x;
+			absoluto=valor_absoluto(x);
+			cout<<"El valor absoluto es: "<<absoluto<<endl;
+			break;
+		case 4:
+			break;
+		default:
+			cout<<"Opcion invalida"<<endl;
+			break;
+		}
+	}while (opcion!=4);
+	    getch();
+}
+    short hola() {
+		cout<<"HOLA"<<endl;
+		return 0;
+	}
+
+	int menor_numero(int a, int b, int c) {
+		int menor;
+		if (a<b) {
+			menor=a;
+			    if (a<c)
+					menor=a;
+				else
+					menor=c;
+		}else{
+			menor=b;
+			    if (b<c)
+					menor=b;
+				else
+					menor=c;
+		}
+		return menor;
+	}
+
+	float valor_absoluto (float x) {
+		float absoluto;
+		if (x>0)
+			absoluto=x;
+		else
+			absoluto=-x;
+		return absoluto;
+	}
+					
