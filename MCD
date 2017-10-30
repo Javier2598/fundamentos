@@ -1,0 +1,36 @@
+// MCD.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int Maximo_Divisor(int a, int  b); 
+
+void main()
+{
+	int a, b, mcd, mayor, d, D;
+	cout<<"Ingrese el primer numero: ";
+	cin>>a;
+	cout<<"Ingrese el segundo numero: ";
+	cin>>b;
+	mcd=Maximo_Divisor(a, b);
+	cout<<"El maximo comun divisor de "<<a<<" y "<<b<<" es: "<<mcd;
+	getch();
+}
+    int Maximo_Divisor(int a, int b) {
+		int mayor, mcd, d, D;
+	    if (a>b)
+			mayor=a;
+		else
+			mayor=b;
+		for (int i=1; i<=mayor; i++) {
+			d=a%i;
+			D=b%i;
+			if (d==0 && D==0) {
+				mcd=i;
+			}
+		}
+		return mcd;
+	}
