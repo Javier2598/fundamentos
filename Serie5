@@ -1,0 +1,24 @@
+// Serie5.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+void main()
+{
+	float  x, n, potencia, factorial=1, s=0;
+	cout<<"Ingrese el numero: ";
+	cin>>x;
+	cout<<"Ingrese el numero de veces que se repetira la serie: ";
+	cin>>n;
+	for (int i=1; i<=n; i++) {
+		potencia=pow(x,i);
+		factorial=factorial*i;
+		s=s+(potencia/factorial);
+	}
+	cout<<"La suma de la serie es: "<<s;
+	getch();
+}
