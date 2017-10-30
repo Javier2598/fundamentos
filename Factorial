@@ -1,0 +1,19 @@
+// Factorial.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int numero, factorial=1;
+	cout<<"Ingresar un numero: ";
+	cin>>numero;
+	for (int i=1; i<=numero; i++) 
+		factorial=factorial*i;
+	
+	cout<<"El factorial del numero es: "<<factorial;
+	getch();
+}
