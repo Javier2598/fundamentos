@@ -1,0 +1,20 @@
+// SumaCuadrados2.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+void main()
+{
+	float s=0, n;
+	cout<<"Ingrese el numero: ";
+	cin>>n;
+	for (float i=i; i<=n; i++) 
+		s=s+pow(i,2);
+	cout<<"La suma de cuadrados es: "<<s;
+	getch();
+}
+	
