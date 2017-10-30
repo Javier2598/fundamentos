@@ -1,0 +1,22 @@
+// Serie4.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+void main() 
+{
+	float x, n, s=0;
+	cout<<"Ingrese un numero real: ";
+	cin>>x;
+	cout<<"Ingrese un numero entero: ";
+	cin>>n;
+	for (int i=1; i<=n; i++) {
+		s=s+pow(x,i);
+	}
+	cout<<"La suma de los numeros es: "<<s;
+	getch();
+}
