@@ -1,0 +1,38 @@
+// MCM.cpp : main project file.
+//	Hacer un programa para calcular el MCM (mínimo común múltiplo) de dos números enteros, donde MCM= (AxB)/MCD.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int Minimo_Multiplo(int a, int b);
+
+void main()
+{
+	int mcm, a, b, d, D, mayor, mcd;
+	cout<<"Ingresar el primer numero: ";
+	cin>>a;
+	cout<<"Ingresar el segundo numero: ";
+	cin>>b;
+	mcm=Minimo_Multiplo(a, b);
+	cout<<"El minimo comun multiplo de "<<a<<" y "<<b<<" es: "<<mcm; 
+	getch();
+}
+    int Minimo_Multiplo(int a, int b) {
+		int mcm, d, D, mayor, mcd;
+		if (a>b)
+			mayor=a;
+		else
+			mayor=b;
+		for (int i=1; i<=mayor; i++) {
+			d=a%i;
+			D=b%i;
+			if (d==0 && D==0) {
+				mcd=i;
+			}
+		}
+		mcm=(a*b)/mcd;
+		return mcm;
+	}
