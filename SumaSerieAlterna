@@ -1,0 +1,22 @@
+// SumaSerieAlterna.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main() 
+{
+	int n, s=0, signo=1, S=0, i=0;
+	cout<<"Ingrese la cantidad  de numeros: ";
+	cin>>n;
+	while (i<=n) {
+		s=s+1;
+		signo=signo*(-1);
+		S=S+s*signo;
+		i=i+1;
+	}
+	cout<<"La suma es: "<<S;
+	getch();
+}
