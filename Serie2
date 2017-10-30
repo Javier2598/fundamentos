@@ -1,0 +1,32 @@
+// Serie2.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+float suma_serie(float x, float n);
+
+void main()
+{
+	float x, n, potencia, factorial=1, signo=-1, suma=0;
+	cout<<"Ingrese el numero real: ";
+	cin>>x;
+	cout<<"Ingrese el numero de veces que desea que se repita la serie: ";
+	cin>>n;
+	suma=suma_serie(x, n);
+	cout<<"La suma es: "<<suma;
+	getch();
+}
+    float suma_serie(float x, float n) {
+		float potencia, factorial=1, signo=-1, suma=0;
+		    for (int i=1; i<=n; i++) {
+			potencia=pow(x,i);
+			factorial=factorial*i;
+			signo=signo*(-1);
+			suma=suma+((potencia/factorial)*signo);
+		}
+		return suma;
+	}
