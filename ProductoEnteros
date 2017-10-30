@@ -1,0 +1,19 @@
+// ProductoEnteros.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int n, p=1;
+	cout<<"Ingrese un numero: ";
+	cin>>n;
+	for (int i=1; i<=n; i++) {
+		p=p*i;
+	}
+	cout<<"El producto de los numeros es: "<<p;
+	getch();
+}
