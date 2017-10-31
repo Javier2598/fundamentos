@@ -1,0 +1,57 @@
+// Menu2.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	int opcion, cantidad, precio, total=0;
+	do {
+	cout<<"MENU"<<endl;
+	cout<<"1. Hamburguesa         Bs. 8"<<endl;
+	cout<<"2. Silpancho           Bs. 12"<<endl;
+	cout<<"3. Salchipapas         Bs. 7"<<endl;
+	cout<<"4. Soda                Bs. 5"<<endl;
+	cout<<"0. Salir"<<endl;
+	cout<<"Ingrese la opcion del menu: ";
+	cin>>opcion;
+
+	switch(opcion) {
+	case 1:
+		cout<<"Ingrese la cantidad de hamburguesas que desea: ";
+		cin>>cantidad;
+		precio=cantidad*8;
+		total=total+precio;
+		break;
+	case 2:
+		cout<<"Ingrese la cantidad de silpanchos que desea: ";
+		cin>>cantidad;
+		precio=cantidad*12;
+		total=total+precio;
+		break;
+	case 3:
+		cout<<"Ingrese la cantidad de salchipapas que desea: ";
+		cin>>cantidad;
+		precio=cantidad*7;
+		total=total+precio;
+		break;
+	case 4:
+		cout<<"Ingrese la cantidad de sodas que desea: ";
+		cin>>cantidad;
+		precio=cantidad*5;
+		total=total+precio;
+		break;
+	case 0:
+		cout<<"Salir"<<endl;
+		break;
+	default:
+		cout<<"Opcion invalida";
+		break;
+	}
+	} while(opcion!=0);
+	cout<<"El total a pagar de la cuenta es: "<<total;
+	getch();
+}
