@@ -1,0 +1,33 @@
+// Serie6.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+float Suma_Serie(float x, float n);
+
+void main() 
+{
+	float x, n, PI=3.1416, suma=PI/5, signo=-1, potencia, factorial=1, S;
+	cout<<"Ingrese el numero real: ";
+	cin>>x;
+	cout<<"Ingrese el numero par: ";
+	cin>>n;
+	suma=Suma_Serie(x, n);
+	cout<<"La suma de la serie es: "<<suma;
+	getch();
+}
+    float Suma_Serie(float x, float n) {
+		float PI=3.1416, suma=PI/5, signo=-1, potencia, factorial=1, S;
+		for (int i=1; i<=(n/2); i++) {
+			i=i*2;
+			potencia=pow(x, i);
+			factorial=factorial*(i/2);
+			S=(potencia/factorial)*signo;
+			suma=suma+S;
+		}
+		return suma;
+	}
