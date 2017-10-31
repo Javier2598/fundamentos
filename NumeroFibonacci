@@ -1,0 +1,32 @@
+// NumeroDeFibonacci.cpp : main project file.
+//Hallar el n-esimo número de Fibonacci.  Un número de Fibonacci se obtiene de la siguiente forma:   F0 = 1, F1 = 1,  luego el siguiente o tercer número se obtiene sumando F2=F1 + F0= 1+1=2.     Cada número de Fibonacci se obtiene sumando los dos últimos, es decir, Fi = Fi-1 + Fi-2,  i=2, 3, 4,     .
+//Luego la secuencia de números Fibonacci es 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, etc.
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int Numero_Fibonacci(int n);
+
+void main()
+{
+	int n, actual=1, anterior=0, suma, c=1;
+	cout<<"Ingresar la posicion del numero que desea saber: ";
+	cin>>n;
+	actual=Numero_Fibonacci(n);
+	cout<<"El numero es: "<<actual;
+	getch();
+}
+    int Numero_Fibonacci(int n) {
+		int actual=1, anterior=0, suma, c=1;
+		while (c<=n) {
+			suma=actual+anterior;
+			anterior=actual;
+			actual=suma;
+			c=c+1;
+		}
+		return actual;
+	}
