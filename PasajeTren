@@ -1,0 +1,29 @@
+// PrecioPasaje.cpp : main project file.
+//Determinar el precio del pasaje en tren si se paga 0.57 Bs por km. Ademas hay descuento de 25% si son mas de 7 dias de estancia y mas de 500 km por recorrer
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+float Precio_Pasaje (int dias, int distancia);
+
+void main() 
+{
+	int total, dias, distancia;
+	cout<<"Ingrese el numero de dias de estancia: ";
+	cin>>dias;
+	cout<<"Ingrese la distancia a recorrer: ";
+	cin>>distancia;
+	total=Precio_Pasaje (dias, distancia);
+	cout<<"El precio total es: "<<total;
+	getch();
+}
+    float  Precio_Pasaje (int dias, int distancia) {
+		float total;
+		total=0.57*distancia;
+		if (dias>7 && distancia>500)
+			total=total-(0.25*total);
+		return total;
+	}
