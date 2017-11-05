@@ -1,0 +1,29 @@
+// SumaPares.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int Suma_Pares (int n);
+
+void main()
+{
+	int n, r, suma=0;
+	cout<<"Ingrese el numero: ";
+	cin>>n;
+	suma=Suma_Pares (n);
+	cout<<"La suma de los digitos pares es: "<<suma;
+	getch();
+}
+    int Suma_Pares (int n) {
+		int suma=0, r;
+		while (n>0) {
+			r=n%10;
+			if (r%2==0)
+				suma=suma+r;
+			n=n/10;
+		}
+		return suma;
+	}
