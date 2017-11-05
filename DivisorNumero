@@ -1,0 +1,36 @@
+// DivisorNumero.cpp : main project file.
+//Ingresar dos numeros e indicar si el menor es divisible entre el mayor.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int Divisor_Numero  (int a, int b);
+
+void main ()
+{
+	int divisor, a, b, mayor, menor;
+	cout<<"Ingrese el primer numero: ";
+	cin>>a;
+	cout<<"Ingrese el segundo numero: ";
+	cin>>b;
+	divisor=Divisor_Numero (a, b);
+	getch();
+}
+    int Divisor_Numero (int a, int b) {
+		int divisor, mayor, menor;
+		if (a>b) {
+			mayor=a;
+			menor=b;
+		}else{
+			mayor=b;
+			menor=a;
+		}
+		if (mayor%menor==0)
+			cout<<"El numero "<<menor<<" es divisor de "<<mayor;
+		else
+			cout<<"El numero "<<menor<<" no es divisor de "<<mayor;
+		return 0;
+	}
