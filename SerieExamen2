@@ -1,0 +1,36 @@
+// SerieExamen2.cpp : main project file.
+//Determinar la suma de la serie S=2.7+(x^1/0!)+(x^2/1!)-(x^3/2!)+(x^4/3!)-...+/-(x^n/(n-1)!)
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+float Suma_Serie (float x, int n);
+
+void main()
+{
+	float suma, x;
+	int n;
+	cout<<"Ingrese el numero base de la serie: ";
+	cin>>x;
+	cout<<"Ingrese el numero de veces que se repetira la serie: ";
+	cin>>n;
+	suma=Suma_Serie (x, n);
+	cout<<"La suma de la serie es: "<<suma;
+	getch();
+}
+    float Suma_Serie (float x, int n) {
+		float suma=2.7, potencia;
+		int factorial=1, signo=-1;
+		suma=suma+x;
+		for (int i=2; i<=n; i++) {
+			potencia=pow(x,i);
+			factorial=factorial*(i-1);
+			signo=signo*(-1);
+			suma=suma+(signo*(potencia/factorial));
+		}
+		return suma;
+	}
