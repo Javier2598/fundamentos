@@ -1,0 +1,41 @@
+// MultiploNumero.cpp : main project file.
+//Ingresar dos numeros y determinar si el mayor es multiplo del menor
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int  Multiplo_Numero (int a, int b);
+
+void main() 
+{
+	int a, b, mayor, menor, multiplo;
+	bool flag;
+	cout<<"Ingrese el primer numero: ";
+	cin>>a;
+	cout<<"Ingrese el segundo numero: ";
+	cin>>b;
+	multiplo=Multiplo_Numero (a, b);
+	getch();
+}
+   int  Multiplo_Numero (int a, int b) {
+		int mayor, menor, multiplo;
+		bool  flag;
+		if (a>b) {
+			mayor=a;
+			menor=b;
+		}else{
+			mayor=b;
+			menor=a;
+		}
+		if (mayor%menor==0) {
+			flag=true;
+			cout<<"El numero "<<mayor<<" es multiplo de "<<menor;
+		}else{
+			flag=false;
+			cout<<"El numero "<<mayor<<" no es multiplo de "<<menor;
+		}
+		return 0;
+	}
