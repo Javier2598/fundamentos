@@ -1,0 +1,154 @@
+// MenuExamen.cpp : main project file.
+// 1. Ingresar dos numeros. Determinar si el mayor es multiplo del menor.
+// 2. Ingresar dos numeros. Determinar si el menor es divisor del mayor.
+// 3. Determinar el precio del pasaje en un tren. Se paga Bs. 0.57 por kilometro recorrido. Si los dias de estancia es mayor a 7 y la distancia recorrida es mayor a 500 km, se tendra un descuento de 25%.
+// 4. Determinar la suma de la serie: S=2.7+(x^1/0!)+(x^2/1!)-(x^3/2!)+(x^4/3!)-...+/-(x^n/(n-1)!)
+// 5. Determinar la suma de los digitos pares de un numero
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+int Multiplo_Numero (int a, int b);
+int Divisor_Numero (int num1, int num2);
+float Pasaje_Tren (int dias, float distancia);
+float Suma_Serie (float x, int n);
+int Suma_Pares (int N);
+
+void main()
+{
+	float distancia, x, total;
+	int a, b, num1, num2, dias, n, N, opcion, multiplo, divisor, suma=2.7, signo=-1, factorial=1, S=0, mayor, menor;
+	bool flag;
+	do {
+		cout<<"MENU"<<endl;
+		cout<<"1. Pregunta 1"<<endl;
+		cout<<"2. Pregunta 2"<<endl;
+		cout<<"3. Pregunta 3"<<endl;
+		cout<<"4. Pregunta 4"<<endl;
+		cout<<"5. Pregunta 5"<<endl;
+		cout<<"0. Salir"<<endl;
+		cout<<"Ingrese la opcion del menu: ";
+		cin>>opcion;
+		switch (opcion) {
+		case 1:
+			cout<<"Ingrese el primer numero: ";
+			cin>>a;
+			cout<<"Ingrese el segundo numero: ";
+			cin>>b;
+			multiplo=Multiplo_Numero (a, b);
+			getch();
+		case 2:
+			cout<<"Ingrese el primer numero: "<<endl;
+			cin>>num1;
+			cout<<"Ingrese el segundo numero: "<<endl;
+			cin>>num2;
+			divisor=Divisor_Numero (num1, num2);
+			getch();
+		case 3:
+			cout<<"Ingrese la cantidad de dias de la estancia en el tren: "<<endl;
+			cin>>dias;
+			cout<<"Ingrese la distancia recorrida por el viaje: "<<endl;
+			cin>>distancia;
+			total=Pasaje_Tren (dias, distancia);
+			cout<<"El precio total del pasaje es: "<<total<<endl;
+			getch();
+		case 4:
+			cout<<"Ingrese el numero de la base de la serie: "<<endl;
+			cin>>x;
+			cout<<"Ingrese el numero de veces que se repetira la serie: "<<endl;
+			cin>>n;
+			suma=Suma_Serie(x, n);
+			cout<<"La suma de la serie es: "<<suma<<endl;
+			getch();
+		case 5:
+			cout<<"Ingrese el numero: "<<endl;
+			cin>>N;
+			S=Suma_Pares (N);
+			cout<<"La suma de los digitos pares es: "<<S<<endl;
+			getch();
+		case 0:
+			break;
+
+        } 
+	}while (opcion!=0);
+	  getch();
+}
+       
+      int Multiplo_Numero (int a, int b) {
+		  int multiplo, mayor, menor;
+		  bool flag;
+		  if (a>b) {
+			  mayor=a;
+			  menor=b;
+		  }else{
+			  mayor=b;
+			  menor=a;
+		  }
+		  if (mayor%menor==0) { 
+			  flag=true;
+		      cout<<"El numero "<<mayor<<" es multiplo de "<<menor<<endl;
+		  }else{
+			  flag=false;
+			  cout<<"El numero "<<mayor<<" no es multiplo de "<<menor<<endl;
+		  }
+		return 0;
+	  }
+
+	  int Divisor_Numero (int num1, int num2) {
+		  int mayor, menor, divisor;
+		  bool flag;
+		  if (num1>num2) {
+			  mayor=num1;
+			  menor=num2;
+		  }else{
+			  mayor=num1;
+			  menor=num2;
+		  }
+		  if (mayor%menor==0) {
+			  flag=true;
+			  cout<<"El numero "<<menor<<"es divisor de "<<mayor<<endl;
+		  }else{
+			  flag=false;
+	          cout<<"El numero "<<menor<<"no es divisor de "<<mayor<<endl;
+		  }
+		  return 0;
+	  }
+
+	  float Pasaje_Tren (int dias, float distancia) {
+		  float total;
+		  total=0.57*distancia;
+		  if (dias>7 && distancia>500)
+			  total=total-(total*0.25);
+		  return total;
+	  }
+
+	  float Suma_Serie (float x, int n) {
+		  float suma=2.7, potencia; 
+		  int factorial=1, signo=-1;
+		  suma=suma+x;
+		  for (int i=2; i<=n; i++) {
+			  potencia=pow(x, i);
+			  factorial=factorial*(i-1);
+			  signo=signo*(-1);
+			  suma=suma+(signo*(potencia/factorial));
+		  }
+		  return suma;
+	  }
+
+	  int Suma_Pares (int N) {
+		  int S=0, r;
+		  while (N>0) {
+			  r=N%10;
+			  if (r%2==0)
+				  S=S+r;
+			  N=N/10;
+		  }
+		  return S;
+	  }
+
+
+			  
