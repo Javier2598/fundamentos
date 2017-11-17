@@ -1,0 +1,28 @@
+const int pinecho=8;
+const int pintrigger=9;
+int led=13;
+unsigned int tiempo, distancia;
+void setup() {
+  Serial.begin (9600);
+  pinMode (pinecho, INPUT);
+  pinMode (pintrigger, OUTPUT);
+  pinMode (led, OUTPUT);
+  
+}
+
+void loop() {
+  digitalWrite (pintrigger, LOW);
+  delayMicroseconds (2);
+  digitalWrite (pintrigger, HIGH);
+  delayMicroseconds (10);
+  tiempo=pulseIn (pinecho, HIGH);
+  distancia=tiempo/58;
+  Serial.print(distancia);
+  Serial.println(" cm");
+  delay(200);
+  if(distancia<30)
+     digitalWrite (led, HIGH);
+  else
+     digitalWrite (led, LOW);
+
+}
