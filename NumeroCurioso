@@ -1,0 +1,45 @@
+// NumeroCurioso2.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define max 100
+using namespace std;
+//declaramos las funciones:
+bool numero_curioso(int num);
+
+int main()
+{
+    int num;
+    cout<<"ingrese un numero para saber si es curioso: ";
+    cin>>num;
+    if (numero_curioso(num))                        //llamamos a la funcion num_curioso
+        cout<<"si es un numero curioso";
+    else
+        cout<<"no es un numero curioso";
+
+    getch();
+    return 0;
+}
+
+bool numero_curioso(int num){
+int a,n,b,suma=0;
+bool yes=false;
+n=num;
+while (num!=0){
+     a=num%10;
+     b=a;
+     while(b>1){
+     a=a*(b-1);
+     b=b-1;
+     }
+suma=suma+a;
+num=num/10;
+}
+if(n==suma){
+    yes=true;
+    return yes;
+    }
+else
+    return yes;
+}
