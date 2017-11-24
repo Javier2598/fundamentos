@@ -1,0 +1,94 @@
+// programa.cpp : Defines the entry point for the console application.
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar (int vector[], int n);
+void mostrar (int vector[], int n);
+void ordenar (int vector[], int n);
+int buscar (int vector[], int n, int &k);
+
+void main()
+{
+	int vector [MAX], n, opcion, k, elemento;
+	//Solicitar el numero de elementos del vector
+	do{
+		cout<<"Ingrese el numero de elemntos: ";
+		cin>>n;
+	}while((n<0) || (n>MAX));
+	//Mostrar el menu
+	do {
+		cout<<"MENU"<<endl;
+		cout<<"1. Cargar vector"<<endl;
+		cout<<"2. Mostrar vector"<<endl;
+		cout<<"3. Ordenar vector"<<endl;
+		cout<<"4. Buscar vector"<<endl;
+		cout<<"0. Salir"<<endl;
+		cout<<"Opcion: ";
+		cin>>opcion;
+		switch(opcion) {
+		case 1: cargar(vector, n);
+			break;
+		case 2: mostrar (vector, n);
+			break;
+		case 3: ordenar (vector, n);
+			break;   
+		case 4: k=buscar (vector, n, elemento);
+			if (k==-9)
+				cout<<"El elemento no se encuentra: ";
+			else
+				cout<<"El elemento se encuentra en la posicion: "<<k;
+			break;
+		case 0: cout<<"Salir"<<endl;
+			break;
+		default: cout<<"Opcion invalida"<<endl;
+			break;
+		}
+		getch();
+		system("cls");
+	}while(opcion!=0);
+	getch();
+}
+void cargar(int vec[], int n) {
+	for(int i=0; i<n; i++) {
+		cout<<"Ingresar vec[ "<<i<<"]= ";
+		cin>>vec[i];    
+	}
+}
+void mostrar(int vec[], int n) {
+	for (int i=0; i<n; i++) {
+		cout<<"vec[ "<<i<<"]= ";
+		cout<<vec[i];
+	}
+}
+void ordenar(int vec[], int n) {
+	int aux;
+	for (int i=0; i<n-1; i++) {
+		for (int j=i+1; j<n; j++) {
+			if (vec[j]<vec[i]) {
+				aux=vec[i];
+				vec[i]=vec[j];
+				vec[j]=aux;
+			}
+		}
+	}
+}
+int buscar (int vec[], int n, int &k)
+{
+	cout<<"Ingresa el elemento: "<<endl;
+	cin>>k;
+	if((k<vec[0]) || (k>vec[n-1]))
+		return -9;
+	for (int i=0; i<n; i++) {
+		if (vec[i]==k) return i;
+	}
+	return -9;
+}
+
+
+
