@@ -1,0 +1,55 @@
+// MaximoValorVector.cpp : main project file.
+//1. Hacer un programa para sacar el máximo valor de un vector de valores ya sean reales o enteros
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector (double a[], int n);
+double maximo_valor (double a[], int n);
+void mostrar_valor (double a[], int n);
+
+void main() 
+{
+	double a[MAX], maximo, aux;
+	int n;
+	do {
+		cout<<"Numero de elementos  que desea ingresar: ";
+		cin>>n;
+	}while (!(n>0 && n<=MAX));
+	cargar_vector(a, n);
+	maximo=maximo_valor (a, n);
+	mostrar_valor (a, n);
+	cout<<"El maximo valor del vector de valores es: ";
+	cout<<maximo;
+	getch();
+}
+    void cargar_vector (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+	}
+	double maximo_valor (double a[], int n) {
+		double maximo, aux;
+		for (int i=0; i<n; i++) {
+			for (int j=0; j<n; j++) {
+				if (a[i]>a[j]) {
+					aux=a[i];
+					a[i]=a[j];
+					a[i]=aux;
+					maximo=aux;
+					return maximo;
+				}
+			}
+		}
+	}
+	void mostrar_valor (double a[], int n) {
+		for(int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cout<<a[i];
+		}
+	}
