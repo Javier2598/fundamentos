@@ -1,0 +1,48 @@
+// VectorMinimoValor.cpp : main project file.
+//2. Hacer un programa para sacar el mínimo valor de un vector de valores ya sean reales o enteros.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector(double a[], int n);
+double minimo_valor (double a[], int n);
+void mostrar_vector (double a[], int n);
+
+void main()
+{
+	double a[MAX], minimo=100;
+	int n;
+	cout<<"Numero de elementos que desea que tenga el vector: ";
+	cin>>n;
+	cargar_vector(a, n);
+	minimo=minimo_valor(a, n);
+	mostrar_vector(a, n);
+	cout<<"El minimo valor del vector es: ";
+	cout<<minimo;
+	getch();
+}
+    void cargar_vector(double a[], int n) {
+		for(int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+	}	
+    double minimo_valor (double a[], int n) {
+		double minimo=100;
+		for (int i=0; i<n; i++) {
+			if(a[i]<minimo)
+				minimo=a[i];
+		}
+		return minimo;
+	}
+	void mostrar_vector (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cout<<a[i];
+		}
+	}
+
