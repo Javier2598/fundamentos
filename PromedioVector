@@ -1,0 +1,49 @@
+// PromedioVector.cpp : main project file.
+//3. Hacer un programa para sacar el promedio de valores de un vector
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void Cargar_Vector (double a[], int tamano);
+double Calcular_Promedio (double a[], int tamano);
+void Mostrar_Vector (double a[], int tamano);
+
+void main()
+{
+	double a[MAX], prom;
+	int tamano, i;
+	do{
+		cout<<"Numero de elementos que desea ingresar: ";
+		cin>>tamano;
+	}while (!(tamano>0 && tamano<=MAX));
+	Cargar_Vector(a, tamano);
+	prom=Calcular_Promedio(a, tamano);
+	Mostrar_Vector(a, tamano);
+	cout<<"El promedio es: ";
+	cout<<prom;
+	getch();
+}
+    void Cargar_Vector(double a[], int tamano) {
+		for (int i=0; i<tamano; i++) {
+			cout<<"a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+	}
+	double Calcular_Promedio(double a[], int tamano) {
+		double suma=0, prom;
+		for (int b=0; b<tamano; b++) {
+			suma=suma+a[b];
+		}
+		prom=suma/tamano;
+		return prom;
+	}
+	void Mostrar_Vector(double a[], int tamano) {
+		for (int i=0; i<tamano; i++) {
+			cout<<" a[ "<<i<<" ]= ";
+			cout<<a[i];
+		}
+	}
