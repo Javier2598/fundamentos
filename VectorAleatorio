@@ -1,0 +1,52 @@
+// VectorAleatorio.cpp : main project file.
+//5. Hacer un programa para generar números enteros aleatorios en un vector de tamaño N.
+//Los números aleatorios están en el rango de un mínimo a un máximo.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector (double a[], int n);
+double numero_aleatorio (double a[], int n);
+/*void mostrar_datos (double a[], int n);*/
+
+void main() 
+{
+	double a[MAX], aleatorio;
+	int n, posicion;
+	cout<<"Numero de numeros que desea ingresar en el vector: ";
+	cin>>n;
+	cargar_vector (a, n);
+	aleatorio=numero_aleatorio (a, n);
+	/*mostrar_datos (a, n);*/
+	cout<<"El numero aleatorio es: ";
+	cout<<aleatorio;
+	getch();
+}
+    void cargar_vector (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+	}
+	double numero_aleatorio (double a[], int n) {
+		double aleatorio;
+		int posicion;
+		cout<<"Ingrese la posicion del numero que quiere sacar: ";
+		cin>>posicion;
+		while (posicion>=0 && posicion<n) {
+			cout<<"El valor del vector a[ "<<posicion<<" ]=  ";
+			cout<<a[posicion];
+			aleatorio=a[posicion];
+			return aleatorio;
+		}
+	}
+	/*void mostrar_datos (double a[], int n) {
+		double aleatorio;
+		int posicion;
+		cout<<"El valor del vector a[ "<<posicion<<" ]=  ";
+		cout<<a[posicion];
+	}*/
