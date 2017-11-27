@@ -1,0 +1,59 @@
+// VectorMayorDiferencia.cpp : main project file.
+//8. Dado un vector A de n números reales, obténgase la diferencia más grande entre dos
+//elementos consecutivos de este vector.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector (double a[], int n);
+double mayor_diferencia (double a[], int n);
+void mostrar_datos (double a[], int n);
+
+void main() 
+{
+	double a[MAX], diferencia, mayordif;     
+	int n;
+	cout<<"Colocar la cantidad de elementos que desea que tenga el vector: ";
+	cin>>n;
+	cargar_vector (a, n);
+	mayordif=mayor_diferencia (a, n);
+	mostrar_datos (a, n);
+	cout<<"La mayor diferencia es: ";
+	cout<<mayordif;
+	getch();              
+}
+    void cargar_vector (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+	}
+	double mayor_diferencia (double a[], int n) {
+		double diferencia, mayordif;
+		mayordif=a[1]-a[0];
+		if (mayordif>0)
+			mayordif=mayordif;
+		else 
+			mayordif=-mayordif;
+		for (int i=0; i<n-1; i++) {
+			diferencia=a[i]-a[i+1];
+			if (diferencia>mayordif) {
+				mayordif=diferencia;
+				if (mayordif>0)
+					mayordif=mayordif;
+				else
+					mayordif=-mayordif;
+			}
+		}
+		return mayordif;
+	}
+	void mostrar_datos (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cout<<a[i];
+		}
+	}
