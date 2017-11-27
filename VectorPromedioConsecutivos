@@ -1,0 +1,61 @@
+// VectoresPromedioConsecutivos.cpp : main project file.
+//7. Sacar el promedio de cada tres valores consecutivos en un vector.
+//P1= A1 + A2 + A3
+//P2= A2 + A3 + A4
+//P3= A3 + A4 + A5
+//……………………
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector (double a[], int n);
+double promedio_consecutivo (double a[], int n);
+/*void mostrar_vector (double a[], int n);*/
+
+void main() 
+{
+	double a[MAX], promedio, suma;
+	int n, k=2;
+	cout<<"Cantidad de numero elementos que desea que haya en el vector: ";
+	cin>>n;
+	cargar_vector (a, n);
+	promedio=promedio_consecutivo (a, n);
+	/*mostrar_vector (a, n);*/
+	while (k<n) {
+	    cout<<"El promedio de los numeros consecutivos es: ";
+	    cout<<promedio;
+		k=k+1;
+	}
+	getch();
+}
+    void cargar_vector (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+	}
+	double promedio_consecutivo (double a[], int n) {
+		double promedio, suma;
+		for (int i=0; i<n; i++) {
+			for (int j=1; j<n; j++) {
+				for (int k=2; k<n; k++) {
+					suma=a[i]+a[j]+a[k];
+					promedio=suma/3;
+					return promedio;
+				}
+			}
+		}
+		
+	}
+	/*void mostrar_vector (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cout<<a[i];
+		}
+	} */
+
+			
