@@ -1,0 +1,53 @@
+// VectorConcatenar.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector (double a[], double b[], int m, int n);
+double concatenar (double a[], double b[], int m, int n);
+void mostrar_vector (double a[], double b[], int m, int n);
+
+void main()
+{
+	double a[MAX], b[MAX], c[MAX], unir;
+	int m, n;
+	cout<<"Ingrese el numero de elementos que desea que tenga el vector a: ";
+	cin>>m;
+	cout<<"Ingrese el numero de elementos que desea que tenga el vector b: ";
+	cin>>n;
+	cargar_vector (a, b, m, n);
+	unir=concatenar (a, b, m, n);
+	mostrar_vector (a, b, m, n);
+	getch();
+}
+    void cargar_vector (double a[], double b[], int m, int n) {
+		for (int i=0; i<m; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+		for (int i=0; i<n; i++) {
+			cout<<"Vector b[ "<<i<<" ]= ";
+			cin>>b[i];
+		}
+	}
+	double concatenar (double a[], double b[], int m, int n) {
+		double c[MAX], unir;
+		for (int i=0; i<m; i++) {
+			c[i]=a[i];
+		}
+		for (int i=m; i<m+n; i++) {
+			c[i]=b[i-m];
+        }
+		return unir;
+	}
+	void mostrar_vector (double a[], double b[], int m, int n) {
+		double c[MAX];
+		for (int i=0; i<m+n; i++) {
+			cout<<"Vector c[ "<<i<<" ]= ";
+			cout<<c[i];
+		}
+	}
