@@ -1,0 +1,50 @@
+// VectorAscendenteDescendente.cpp : main project file.
+// 14. Hacer un programa para clasificar una lista de valores (enteros o reales) en orden
+//ascendente/descendente
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector (double a[], int n);
+void ascendente_vector (double a[], int n);
+void mostrar_vector (double a[], int n);
+
+void main()
+{
+	double a[MAX], aux;
+	int n;
+	cout<<"Ingrese el numero de elementos que desea en el vector: ";
+	cin>>n;
+	cargar_vector (a, n);
+	ascendente_vector (a, n);
+	mostrar_vector (a, n);
+	getch();
+}
+    void cargar_vector (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+	}
+	void ascendente_vector (double a[], int n) {
+		double aux;
+		for (int i=0; i<n-1; i++) {
+			for (int j=1; j<n; j++) {
+				if (a[i]>a[j]) {
+					aux=a[i];
+					a[i]=a[j];
+					a[j]=aux;
+				}
+			}
+		}
+	}
+	void mostrar_vector (double a[], int n) {
+		for (int j=0; j<n; j++) {
+			cout<<"Vector a[ "<<j<<" ]= ";
+			cout<<a[j];
+		}
+	}
