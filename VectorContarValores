@@ -1,0 +1,57 @@
+// VectorContarValores.cpp : main project file.
+//11. Hacer un programa que permita contar número de valores negativos, positivos y ceros que
+//hay en un vector.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector (double a[], int n);
+void contar_valores(double a[], int n);
+void mostrar_valor (double a[], int n);
+
+void main()
+{
+	double a[MAX];
+	int n, posi=0, nega=0, cero=0;
+	cout<<"Ingresar el numero de elementos que desea que tenga el vector: ";
+	cin>>n;
+	cargar_vector (a, n);
+	contar_valores (a, n);
+	mostrar_valor (a, n);
+	
+	getch();
+}
+    void cargar_vector (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+	}
+	void contar_valores (double a[], int n) {
+		int posi=0, nega=0, cero=0, contar;
+		for (int i=0; i<n; i++) {
+			if (a[i]>0) 
+				posi=posi+1;
+			if (a[i]<0)
+				nega=nega+1;
+			if (a[i]==0)
+				cero=cero+1;
+		}
+		cout<<"La cantidad de numeros positivos es: ";
+	    cout<<posi;
+	    cout<<"La cantidad de numeros negativos es: ";
+	    cout<<nega;
+	    cout<<"La cantidad de ceros que hay es: ";
+	    cout<<cero;
+		
+	}
+	void mostrar_valor (double a[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cout<<a[i];
+		}
+	}
