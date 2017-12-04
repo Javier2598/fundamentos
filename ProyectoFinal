@@ -1,0 +1,289 @@
+// ProyectoFinalLimpio.cpp : main project file.
+
+// proyecto.cpp : Defines the entry point for the console application.
+// 
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+#define MAX 10
+
+using namespace std;
+
+void menu_Rentabilidad();
+void margen_Utilidad();
+void rendimiento_Inversion();
+void rendimiento_Utilidad();
+
+void menu_Liquidez();
+void RazonCirculante();
+void PruebaLiquidez();
+
+void menu_Activos();
+void RotacionCuenta();
+void PeriodoPromedio();
+
+void menu_Pasivos();
+void RelacionActivoPasivo();
+
+int main()
+{
+	int op;
+	do{
+		cout<<"----          Proyecto Financiero                        ----"<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"----             Menu Principal                          ----"<<endl;
+		cout<<endl;
+		cout<<" 1.- Indicadores de Rentabilidad."<<endl;
+		cout<<" 2.- Indicadores de Liquidez."<<endl;
+		cout<<" 3.- Indicadores de Utilizacion de Activos."<<endl;
+		cout<<" 4.- Indicadores de Utilizacion de Pasivos."<<endl;
+		cout<<" 0.- Salir."<<endl;
+		cout<<endl;
+		cout<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"Elija una opcion : ";
+		cin>>op;
+		switch(op){
+		case 1:
+			menu_Rentabilidad();
+			break;
+		case 2:
+			menu_Liquidez();
+			break;
+		case 3:
+			menu_Activos();
+			break;
+		case 4:
+			menu_Pasivos();
+			break;
+		case 0:
+			cout<<"Saliendo del programa..."<<endl;
+			getch();
+		}
+	}while(op!=0);
+	return 0;
+}
+
+void menu_Rentabilidad(){
+	int op;
+	do{
+		cout<<"----        Proyecto                                     ----"<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"----             Menu Rentabilidad                       ----"<<endl;
+		cout<<endl;
+		cout<<" 1.- Margen de Utilidad."<<endl;
+		cout<<" 2.- Rendimiento sobre inversion."<<endl;
+		cout<<" 3.- Rendimiento sobre el capital contable."<<endl;
+		cout<<" 0.- Volver."<<endl;
+		cout<<endl;
+		cout<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"Elija una opcion : ";
+		cin>>op;
+		switch(op){
+		case 1:
+			margen_Utilidad();
+			break;
+		case 2:
+			rendimiento_Inversion();
+			break;
+		case 3:
+			rendimiento_Utilidad();
+			break;	
+		}
+	}while(op!=0);
+}
+
+void margen_Utilidad(){
+	float vecUt[MAX], vecIn[MAX], vecCo[MAX];
+
+	for(int i=0;i<5;i++){
+		cout<<"Introduzca el ingreso total: ";
+		cin>>vecIn[i];
+		cout<<"Introduzca el costo del producto o servicio: ";
+		cin>>vecCo[i];
+		vecUt[i]=vecIn[i]-vecCo[i];
+	}
+
+	cout<<endl;
+	cout<<"Ingreso \t\t Costo \t\t Utilidad "<<endl;
+	cout<<"----------------------------------------------"<<endl;
+	cout<<endl;
+	for(int i=0;i<5;i++){
+		cout<<vecIn[i]<<"\t\t"<<vecCo[i]<<"\t\t"<<vecUt[i]<<endl;
+		cout<<endl;
+	}
+	getch();
+}
+
+void rendimiento_Inversion(){
+	float diferencia, ganancia, perdida, porcentaje, rendimiento, inversion;
+	inversion=0;
+	cout<<"Ingrese las ganancias: ";
+	cin>>ganancia;
+	cout<<"Ingrese las perdidas: ";
+	cin>>perdida;
+	cout<<"Ingrese la inversion: ";
+	cin>>inversion;
+
+	if (ganancia > perdida){
+		diferencia = ganancia-perdida;
+	}
+	porcentaje = diferencia * 100;
+	rendimiento = porcentaje / inversion;
+	cout<<"El rendimiento es de: "<<rendimiento<<endl;
+	getch();
+}
+
+void rendimiento_Utilidad() {
+	float RendCap, utilidad, ganancia, perdida, CapContable;
+	cout<<"Ingrese la ganancia: ";
+	cin>>ganancia;
+	cout<<"Ingrese la perdida: ";
+	cin>>perdida;
+	cout<<"Ingresar capital contable: ";
+	cin>>CapContable;
+	utilidad=ganancia-perdida;
+	RendCap=utilidad/CapContable;
+	cout<<"El rendimiento sobre el capital contable: "<<RendCap<<endl;
+	getch();
+}
+
+
+void menu_Liquidez(){
+	int op;
+	do{
+		cout<<"----        Proyecto                                     ----"<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"----             Menu Liquidez                           ----"<<endl;
+		cout<<endl;
+		cout<<" 1.- Razon Circulante."<<endl;
+		cout<<" 2.- Prueba de liquidez."<<endl;
+		cout<<" 0.- Volver."<<endl;
+		cout<<endl;
+		cout<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"Elija una opcion : ";
+		cin>>op;
+		switch(op){
+		case 1:
+			RazonCirculante();
+			break;
+		case 2:
+			PruebaLiquidez();
+			break;
+		}
+	}while(op!=0);
+}
+
+void RazonCirculante() {
+	float RazonCirculante, activo, pasivo;
+	cout<<"Ingresar el activo circulante: ";
+	cin>>activo;
+	cout<<"Ingresar el pasivo a corto plazo: ";
+	cin>>pasivo;
+	RazonCirculante=activo/pasivo;
+	cout<<"La razon circulante es: "<<RazonCirculante<<endl;
+	getch();
+}
+
+void PruebaLiquidez() {
+	//Prueba de liquidez (o prueba del ácido) = Activo circulante – Inventarios   / Pasivo a corto plazo  =  n veces
+	float PruebaLiquidez, activo, inventario, pasivo;
+	cout<<"Ingresar el activo circulante: ";
+	cin>>activo;
+	cout<<"Ingresar el monto de los inventarios: ";
+	cin>>inventario;
+	cout<<"Ingresar el pasivo a corto plazo: ";
+	cin>>pasivo;
+	PruebaLiquidez=(activo-inventario)/pasivo;
+	cout<<"La prueba de liquidez o prueba de acido es: "<<PruebaLiquidez<<endl;  
+	getch();
+}
+
+void menu_Activos() {
+	int op;
+	do{
+		cout<<"----        Proyecto                                     ----"<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"----             Menu Activos                            ----"<<endl;
+		cout<<endl;
+		cout<<" 1.- Rotacion de cuentas por cobrar."<<endl;
+		cout<<" 2.- Periodo promedio de cobranza."<<endl;
+		cout<<" 0.- Volver."<<endl;
+		cout<<endl;
+		cout<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"Elija una opcion : ";
+		cin>>op;
+		switch(op){
+		case 1:
+			RotacionCuenta();
+			break;
+		case 2:
+			PeriodoPromedio();
+			break;
+		}
+	}while(op!=0);
+}
+
+    void RotacionCuenta() {
+		//Rotación de cuentas por cobrar = Ventas / Cuentas por cobrar =  n veces
+		float rotacion, ventas, cuentas;
+		cout<<"Ingrese el numero de ventas: ";
+		cin>>ventas;
+		cout<<"Ingrese el numero de cuentas: ";
+		cin>>cuentas;
+		rotacion=ventas/cuentas;
+		cout<<"La rotacion de cuentas por cobrar es: "<<rotacion<<endl;
+		getch();
+	}
+
+	void PeriodoPromedio() {
+		//Periodo promedio de cobranza = Cuentas por cobrar / Ventas diarias promedio = días promedio
+		float periodo, cuentas, ventas;
+		cout<<"Ingrese el numero de cuentas por cobrar: ";
+		cin>>cuentas;
+		cout<<"Ingrese el numero de ventas diarias promedio: ";
+		cin>>ventas;
+		periodo=cuentas/ventas;
+		cout<<"El periodo promedio de cobranza es: "<<periodo<<endl;
+		getch();
+	}
+
+void menu_Pasivos(){
+	int op;
+	do{
+		cout<<"----        Proyecto                                     ----"<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"----             Menu Pasivos                            ----"<<endl;
+		cout<<endl;
+		cout<<" 1.- Relacion pasivo total a activo total."<<endl;
+		cout<<" 0.- Volver."<<endl;
+		cout<<endl;
+		cout<<endl;
+		cout<<"-------------------------------------------------------------"<<endl;
+		cout<<"Elija una opcion : ";
+		cin>>op;
+		switch(op){
+		case 1:
+			RelacionActivoPasivo();
+			break;
+		}
+	}while(op!=0);
+}
+
+    void RelacionActivoPasivo() {
+		//Relación de pasivo total a activo total = Pasivo total / Activo total =  cantidad que se adeuda por cada peso de activo 
+		float pasivo, activo, relacion;
+		cout<<"Ingrese el pasivo total: ";
+		cin>>pasivo;
+		cout<<"Ingrese el activo total: ";
+		cin>>activo;
+		relacion=pasivo/activo;
+		cout<<"La relacion entre el pasivo total y el activo total es de: "<<relacion<<endl;
+		getch();
+	}
+
