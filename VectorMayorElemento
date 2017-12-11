@@ -1,0 +1,61 @@
+// VectorMayoresElementos.cpp : main project file.
+// Dados dos vectores A[N], y B[N] que se encuentran cargados con numeros enteros, se desea llenar un vector R[N], con los mayores elementos
+// de cada posicion de A y B. Ej: A[N]={5,7,8}; B[N]={8,6,15}; R[N]={8,7,15}
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector (double a[], double b[], int n);
+/*void mostrar_vector (double a[], double b[], int n);*/
+void vector_mayor (double a[], double b[], int n);
+
+void main()
+{
+	double a[MAX], b[MAX], R[MAX];
+	int n;
+	cout<<"Ingrese la cantidad de elementos que tendra cada vector: ";
+	cin>>n;
+	cargar_vector (a, b, n);
+	/*mostrar_vector (a, b, n);*/
+	vector_mayor (a, b, n);
+	getch();
+}
+    void cargar_vector (double a[], double b[], int n) {
+	for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cin>>a[i];
+		}
+		for (int j=0; j<n; j++) {
+			cout<<"Vector b[ "<<j<<" ]= ";
+			cin>>b[j];
+		}
+	}
+
+	 /*void mostrar_vector (double a[], double b[], int n) {
+		for (int i=0; i<n; i++) {
+			cout<<"Vector a[ "<<i<<" ]= ";
+			cout<<a[i];
+		}
+		for (int j=0; j<n; j++) {
+			cout<<"Vector b[ "<<j<<" ]= ";
+			cout<<b[j];
+		}
+	}*/
+
+	void vector_mayor (double a[], double b[], int n) {
+		double R[MAX];
+		for (int k=0; k<n; k++) {
+			if (a[k]>b[k]) 
+				R[k]=a[k];
+			else
+				R[k]=b[k];
+			cout<<"Vector R[ "<<k<<" ]= ";
+			cout<<R[k];
+		}
+	}
+
+				
