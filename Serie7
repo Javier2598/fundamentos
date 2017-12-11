@@ -1,0 +1,38 @@
+// Serie7.cpp : main project file.
+// Serie: S= (x^2)/2! + (x^4)/4! + (x^6)/6! + (x^8)/8! + ... + (x^n)/n!
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+float Suma_Serie (float x, int n);
+
+void main()
+{
+	float suma=0, x, potencia, numerador;
+	int n, factorial=1;
+	cout<<"Ingrese el numero real del numerador: ";
+	cin>>x;
+	cout<<"Ingrese el numero de veces que desea que se repita la serie: ";
+	cin>>n;
+	suma=Suma_Serie (x, n);
+	cout<<"La suma de la serie es: ";
+	cout<<suma;
+	getch();
+}
+
+    float Suma_Serie (float x, int n) {
+		float suma=0, potencia, numerador;
+		int factorial=1;
+		for (int i=1; i<=n; i++) {
+			potencia=2*i;
+			numerador=pow(x,potencia);
+			for (int j=2; j<=potencia; j++) {
+				factorial=factorial*j;
+			    }
+			suma=suma+(numerador/factorial);
+		}
+		return suma;
+	}
