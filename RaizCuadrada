@@ -1,0 +1,19 @@
+// RaizCuadrada.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+
+using namespace std;
+
+void main()
+{
+	float n, raiz;
+	cout<<"Ingrese un numero: ";
+	cin>>n;
+	raiz=sqrt(n);
+	cout<<"La raiz cuadrada del numero es: ";
+	cout<<raiz;
+	getch();
+}
