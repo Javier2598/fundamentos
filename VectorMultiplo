@@ -1,0 +1,45 @@
+// VectorMultiplo.cpp : main project file.
+//Elaborar un programa que lea un numero naatural A (A>0) y cargue un vector Vec[N] con los N multiplos de A
+// Ej: Con N=5 y A=4     Vec[5]={4, 8, 12, 16, 20} 
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void Multiplo_Vector (double vector[], int n, int a);
+/*void Mostrar_Vector (double vector[], int n, int a);*/
+
+void main ()
+{
+	double vector[MAX];
+	int n, a, multiplo;
+	cout<<"Ingrese el numero base de los multiplos: ";
+	cin>>a;
+	cout<<"Ingrese la cantidad de multiplos que desea que tenga el vector: ";
+	cin>>n;
+	Multiplo_Vector (vector, n, a);
+	/*Mostrar_Vector (vector, n, a);*/
+	getch();
+}
+    void Multiplo_Vector (double vector[], int n, int a) {
+		int multiplo;
+		for (int i=1; i<=n; i++) {
+			multiplo=a*i;
+			for (int j=0; j<n; j++) {
+				vector[j]=multiplo;
+				cout<<"vector [ "<<j<<" ]= ";
+			    cout<<vector[j];
+			}
+		}
+	}
+
+	/*void Mostrar_Vector (double vector [], int n, int a) {
+		for (int j=0; j<n; j++) {
+			cout<<"vector [ "<<j<<" ]= ";
+			cout<<vector[j];
+		}
+	}
+	*/
