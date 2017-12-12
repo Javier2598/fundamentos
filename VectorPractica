@@ -1,0 +1,147 @@
+// VectorPractica.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+#define MAX 100
+
+using namespace std;
+
+void cargar_vector(int vec[],int tamanio);
+void Fibonacci(int vec[],int tamanio);
+void mostrar_vector(int vec[],int tamanio);
+void ordenar_vector(int vec[],int tamanio);
+void cargar_vector_fib(int vec[],int tamanio);
+
+
+
+void main ()
+{
+	int vec[MAX],op,n;
+	cout<<"Ingrese tamanio del vector";
+	cin>>n;
+	cout<<endl;
+	do{
+		system ("cls");
+		cout<<"1.- cargar vector"<<endl;
+		cout<<"2.- mostrar vector"<<endl;
+		cout<<"3.- ordenar vector"<<endl;
+		cout<<"4.- Fibonacci"<<endl;
+		cout<<"5.- Ordenar Fibonacci Multiplos de 2"<<endl;
+		cout<<"0.- salir"<<endl;
+		cout<<endl;
+		cout<<"ingrese una opcion:";
+		cin>>op;
+		switch (op){
+		case 1:
+			cargar_vector(vec,n);// llamada a funcion
+			getch();
+			break;
+		case 2:
+			mostrar_vector(vec,n);
+			getch();
+			break;
+		case 3:
+			ordenar_vector(vec,n);
+			getch();
+			break;
+		case 4:
+			Fibonacci(vec,n);
+			getch();
+			break;
+		case 5:
+			cargar_vector_fib(vec,n);
+			getch();
+			break;
+		default:
+			cout<<"opcion no valida";
+			break;
+		case 0:
+			cout<<"saliendo del programa";
+			break;
+		}
+	}while(op!=0);
+	getch ();
+}
+
+void cargar_vector(int vec[],int tamanio)
+{ 
+	for(int i=0;i<tamanio;i++)
+	{
+		cout<<"vec["<<i<<"]=";
+		cin>>vec[i];
+	}
+}
+
+//void mostrar_datos(int vec[],int tamanio)
+void mostrar_vector(int vec[],int tamanio)
+{ 
+	for(int i=0;i<tamanio;i++)
+	{
+		cout<<"vec["<<i<<"]=";
+		cout<<vec[i]<<endl;
+	}
+}
+///****** inicio de Definición de función****///
+void Fibonacci(int vec[],int tamanio)
+{
+	vec[0]=1;
+	vec[1]=1;
+	cout<<vec[1]<<", ";
+	for(int i=1;i<tamanio;i++)
+	{
+		vec[i+1]=vec[i-1]+vec[i];
+		cout<<vec[i]<<", ";
+	}
+	//Está llamada es para ordenar el vector, abajo de esta parte debe hacer la validación de los números múltiplos de 2 
+	
+}
+///****** fin de Definición de función****/////	
+
+
+void cargar_vector_fib(int vec[],int tamanio)
+{
+	int vecb[MAX];
+	for(int i=0;i<tamanio;i++)
+	{
+		if(vec[i] % 2 == 0)
+		{
+			vecb[i]=vec[i];
+		}else{
+			vecb[i]=0;
+		}
+
+	}
+	ordenar_vector(vecb,tamanio);
+	mostrar_vector(vecb,tamanio);
+}
+
+void ordenar_vector(int vecb[],int tamanio)
+{
+	int i,j,aux;
+	for(i=0;i<tamanio-1;i++){
+		for(j=1;j<tamanio;j++){
+			if(vecb[i]>vecb[j])
+			{
+				aux=vecb[j];
+				vecb[j]=vecb[i];
+				vecb[i]=aux;
+			}
+		}
+	}
+}
+
+
+void Calcula_Precio(int vecP[],int tamanio){
+	int vecC[MAX];
+	for(int i=0;i<tamanio;i++){
+		if(vecP[i]<70){
+			vecC[i]=vecP[i]*0,05;
+		}else{
+			vecC[i]=vecP[i];
+		}
+	}
+
+	mostrar_vector(vecC,tamanio);
+}
