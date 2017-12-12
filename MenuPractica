@@ -1,0 +1,70 @@
+// MenuPractica.cpp : main project file.
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int resta_numeros (int a, int b);
+int modulo_numeros (int X, int Y); 
+
+void main()
+{
+	int a, b, X, Y, opcion, resta, modulo;
+	do {
+		cout<<"-----------MENU-----------"<<endl;
+		cout<<"1. Resta de dos valores"<<endl;
+		cout<<"2. Modulo de numeros reales con divisor diferente de cero"<<endl;
+		cout<<"3. Salir"<<endl;
+		cout<<"Ingrese una opcion del menu: ";
+		cin>>opcion;
+		switch (opcion) {
+		case 1:
+			cout<<"Ingrese el primer numero: ";
+			cin>>a;
+			cout<<"Ingrese el segundo numero: ";
+			cin>>b;
+			resta=resta_numeros (a, b);
+			cout<<"La resta de los numeros es: ";
+			cout<<resta;
+			getch();
+			break;
+		case 2:
+			cout<<"Ingrese el primer numero: ";
+			cin>>X;
+			cout<<"Ingrese el segundo numero: ";
+			cin>>Y;
+			modulo=modulo_numeros (X, Y);
+			cout<<"El modulo de los numeros es: ";
+			cout<<modulo;
+			getch();
+			break;
+		case 3:
+			cout<<"Salir"<<endl;
+			break;
+		default:
+			cout<<"Ingrese opcion valida"<<endl;
+			break;
+		}
+	} while (opcion!=3);
+	getch();
+}
+
+int resta_numeros (int a, int b) {
+	int resta;
+	if (a>b) 
+		resta=a-b;
+	else
+		resta=b-a;
+	return resta;
+}
+
+int modulo_numeros (int X, int Y) {
+	int modulo;
+	if (X>Y) 
+		modulo=X%Y;
+	else
+		modulo=Y%X;
+	return modulo;
+}
