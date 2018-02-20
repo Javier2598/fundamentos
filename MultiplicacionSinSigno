@@ -1,0 +1,26 @@
+// Multiplicacion.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+{
+	float num1, num2, multiplicacion=0, n=1;
+	cout<<"Ingrese el primer numero: ";
+	cin>>num1;
+	cout<<"Ingrese el segundo numero: ";
+	cin>>num2;
+	while (n<=num2) {
+		multiplicacion=multiplicacion+num1;
+		n=n+1;
+	}
+	cout<<"La multiplicacion es: "<<multiplicacion<<endl;
+	getch();
+
+}
+
+
